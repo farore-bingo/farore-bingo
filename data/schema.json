@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"freeSpaces": {
+			"description": "Les choix possibles pour la case centrale",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/space"
+			}
+		},
+		"spaces": {
+			"description": "Les choix possibles pour les cases normales",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/space"
+			}
+		}
+	},
+	"required": ["freeSpaces", "spaces"],
+	"$defs": {
+		"space": {
+			"required": ["html"],
+			"properties": {
+				"html": {
+					"description": "Le texte affiché dans la case au format HTML",
+					"type": "string"
+				},
+				"weight": {
+					"description": "Le poids de cette case. Un poids de 2 est deux fois plus probable que un poids de 1 etc.",
+					"type": "integer",
+					"minimum": 1,
+					"default": 1
+				}
+			}
+		}
+	}
+}
