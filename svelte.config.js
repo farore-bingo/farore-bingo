@@ -9,6 +9,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			"$data/*": "./data/*",
+			"$assets/*": "./src/assets/*",
 		},
 	},
 }
